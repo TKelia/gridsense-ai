@@ -1,10 +1,4 @@
-# 01 — Research Findings (Grounded, Sourced)
-
-> Rule 1: every fact here has a source. Items without a verified source are tagged `⚠️ UNVERIFIED`.
-> Last updated: 2026-06-22 (Sprint 1 — BOM, FX, regulation, funding verified in Claude Code).
-> Currency note: **1 USD ≈ 1,464 RWF** — market mid-rate, 21–22 June 2026 (Investing.com USD/RWF ≈ 1,464; Coinbase 1,464; currency.me.uk 1,463.79). `⚠️ Use BNR official daily reference rate (bnr.rw) for final accounting` — not machine-accessible this session; market vs official spread is typically small. (Prior ~1,400 working figure is now superseded.)
-
----
+This document summarizes the research that guided the design decisions for GridSense AI. Before implementing any features, we verified electricity tariffs, hardware pricing, regulatory information, exchange rates, and existing research on energy monitoring. Whenever we could not verify a claim from a reliable source, we marked it clearly instead of treating it as fact. This approach helped us base the project on evidence rather than assumptions.
 
 ## 1. Electricity tariffs in Rwanda (THE core of our value proposition)
 
