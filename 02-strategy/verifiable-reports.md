@@ -1,11 +1,5 @@
 # The Channel — Verifiable Monthly Reports
 
-> RULE 2 output. Brainstorm → stress-test (kill weak/generic) → deep-dive → argue & defend.
-> Decision date: **2026-07-03**. Grounding: `01-research/blockchain-research.md`.
-> Purpose: decide *exactly* what the blockchain layer is, defend it, and write down why it
-> beats the alternatives — so it survives a capstone panel and a regulator.
-
----
 
 ## Pass 1 — Brainstorm (options on the table)
 
