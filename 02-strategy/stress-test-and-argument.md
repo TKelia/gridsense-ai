@@ -2,7 +2,7 @@
 
 ---
 
-## A. THE BRUTAL TRUTH (the one weakness that could sink the pitch)
+## A. THE BRUTAL TRUTH
 
 **Half of Rwanda's connected households use ≤ ~20 kWh/month** — they sit in the 89 RWF/kWh lifeline tier. A household at 20 kWh pays ~1,780 RWF (~US$1.30) a month. Even a heroic 20% saving = ~356 RWF (~US$0.25)/month. **No one buys a $30 device to save $0.25 a month.**
 
@@ -12,7 +12,7 @@ If GridSense pitches itself as "for every Rwandan household," a sharp panelist k
 
 ---
 
-## B. BRAINSTORM — the option space (don't marry the first idea)
+## B. BRAINSTORM — the option space 
 
 **B1. What exactly do we monitor first?**
 - (a) **Multi-circuit "by area"** CTs inside the distribution board (the draft's Phase 1).
