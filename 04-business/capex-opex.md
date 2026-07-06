@@ -2,7 +2,7 @@
 
 > Rule 1: every price below is sourced to a live supplier page or tagged `⚠️ ESTIMATE`/`⚠️ ASSUMPTION` with its basis stated. No fabricated numbers.
 > **Working FX (this sprint): 1 USD ≈ 1,464 RWF** — market mid-rate, 21–22 June 2026 (Investing.com USD/RWF ≈ 1,464; Coinbase 1,464; currency.me.uk 1,463.79). `⚠️ For final accounting use the BNR official daily reference rate` (bnr.rw — page not machine-accessible this session; difference vs market is typically small).
-> Method: priced primarily from **two Kigali shops that sell in RWF** (SoftTech Supply, Hills Electronics). A Rwandan retailer's shelf price already includes import duty + 18% VAT + levies, so these are **landed Rwanda prices** — the most defensible basis. International/import-model figures are kept only as a cross-check (Section 6).
+> Method: priced primarily from **two Kigali shops that sell in RWF** (SoftTech Supply, Hills Electronics). A Rwandan retailer's shelf price already includes import duty + 18% VAT + levies, so these are **landed Rwanda prices**. International/import-model figures are kept only as a cross-check (Section 6).
 
 ---
 
