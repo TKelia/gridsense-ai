@@ -1,0 +1,15 @@
+{
+  "name": "gridsense-report-anchor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Off-chain scripts: hash + encrypt + pin (IPFS) + anchor a GridSense monthly report on Base Sepolia (testnet PoC).",
+  "scripts": {
+    "anchor": "node --env-file-if-exists=.env anchor.mjs",
+    "verify": "node --env-file-if-exists=.env verify.mjs"
+  },
+  "dependencies": {
+    "ipfs-only-hash": "^4.0.0",
+    "viem": "^2.21.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "gridsense.monthly-report.v1",
+  "reportType": "residential-monthly",
+  "generatedAt": "2026-07-31T18:05:00.000Z",
+  "period": { "year": 2026, "month": 7, "label": "July 2026" },
+  "home": {
+    "internalId": "home-000123",
+    "label": "Demo Home — Kigali",
+    "note": "This sample stands in for a real finalized report. Personal fields live only in this (encrypted, off-chain) file — NEVER on-chain."
+  },
+  "tariff": {
+    "authority": "RURA (Rwanda), residential tiers effective 2025-10-01",
+    "currency": "RWF",
+    "tiers": [
+      { "label": "0–20 kWh", "rate": 89 },
+      { "label": "21–50 kWh", "rate": 310 },
+      { "label": ">50 kWh", "rate": 369 }
+    ]
+  },
+  "consumptionKwh": 100,
+  "blocks": [
+    { "label": "0–20 kWh", "kwh": 20, "rate": 89, "amountRWF": 1780 },
+    { "label": "21–50 kWh", "kwh": 30, "rate": 310, "amountRWF": 9300 },
+    { "label": ">50 kWh", "kwh": 50, "rate": 369, "amountRWF": 18450 }
+  ],
+  "totalRWF": 29530,
+  "appliancesKwh": {
+    "waterHeater": 59,
+    "fridge": 36,
+    "tv": 11,
+    "ironKettle": 8,
+    "fan": 7,
+    "laptop": 6
+  },
+  "disclaimer": "Sensor data in the GridSense demo is simulated and labelled; the tariff math is real and sourced. This report's integrity (not its accuracy) is what the on-chain anchor proves."
+}
