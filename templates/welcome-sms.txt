@@ -1,0 +1,1 @@
+Welcome to GridSense AI, {name}! Your account is ready. See your electricity cost across Rwanda's real RURA tariff (89/310/369 RWF/kWh), get tier-cliff alerts, and save. Open your dashboard: {appUrl} Help: {support}
