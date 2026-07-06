@@ -1,8 +1,6 @@
 # 01 — Evidence & Validation (Defense Backbone)
 
-> Built 2026-06-22 (Cowork) to close the capstone's biggest open gaps with **citable evidence**: (1) the savings %, (2) value-prop/UX from real user experience, (3) connectivity to validate Wi-Fi-only, (4) primary-source tariff confirmation, (5) current sector news.
-> Rule 1: every figure sourced. Where evidence conflicts, both sides are shown.
-
+During development we identified several assumptions that needed stronger evidence before they could support our project proposal. This document brings together the research we used to validate those assumptions, including expected energy savings, user behaviour, internet connectivity, electricity tariffs, and recent developments in Rwanda's energy sector. Where studies disagree, we include both perspectives and explain why we reached our conclusions.
 ---
 
 ## 1. Does energy feedback actually cut consumption? (closes the #1 gap)
