@@ -1,4 +1,4 @@
-# GridSense AI — Capstone Submission
+# GridSense AI —
 
 **An AI-powered home electricity monitor for Rwanda.** GridSense shows a household how much
 electricity each appliance uses, tracks the live cost across Rwanda's real RURA tariff
@@ -9,7 +9,7 @@ tips, and produces a **monthly report whose integrity is verifiable on a public 
 - **Operator:** Tesi Songa Kelia — BSc Software Engineering, African Leadership University, Kigali
 - **Core focus (scoped to the proposal):** appliance-level consumption monitoring + AI recommendations + tier alerts, plus a blockchain verifiable-report layer.
 
-> **Demo honesty:** sensor data in the hosted demo is **simulated and labelled**; the
+> **Demo :** sensor data in the hosted demo is **simulated and labelled**; the
 > tariff math is **real and unit-tested** against the RURA tiers. The blockchain layer is on
 > a **free public testnet (Base Sepolia)** — no token, no payment, no personal data on-chain.
 
@@ -88,6 +88,6 @@ and performance on different hardware/software. Headlines:
 5. **3:30–4:45 — Blockchain verify.** Open a monthly report, point out the **"Verified on-chain ✓"** badge, open **/verify**, click **Verify now** (PASS), then **Tamper demo** (FAIL). Say the honest line: "this proves the report wasn't changed after issuance — not that the reading was correct." Show the BaseScan link.
 6. **4:45–5:00 — Close.** "Built local, on the real RURA tariff, privacy-by-design under Law 058/2021. GridSense AI — see your power, spend less."
 
-## 7. Honesty & scope notes
+## 7. Scope notes
 - Sensor data in the hosted demo is simulated + labelled; the ingestion contract matches a real ESP32 + CT clamp so live devices plug in unchanged.
 - Blockchain = **testnet, integrity only** (no token/payment/personal data). Full reasoning: `02-strategy/verifiable-reports.md`; contract + proof: `07-blockchain/`.
