@@ -1,7 +1,7 @@
 # 02 — Platform Expansion: The Channel (brainstorm → stress-test → argue → decide)
 
 > Scope: expand GridSense from a single-home dashboard into a multi-tier platform — Individual, Landlord/Property Manager, and Enterprise — with per-tenant billing, reports, payment reminders, subscriptions/checkout, and a connected-device tier.
-> Date: 2026-06-22. Rule 1: verified facts cited; pricing/strategy items are labelled assumptions.
+
 
 ---
 
