@@ -7,10 +7,10 @@
 
 ---
 
-## 1. What GridSense AI is (the definition I say out loud)
+## 1. What GridSense AI is 
 **GridSense AI is an AI-powered electricity intelligence platform for Rwanda.** It turns invisible, prepaid electricity spending into clear, real-time, money-saving insight — for a single household, for a landlord billing many tenants, and for enterprises managing many properties.
 
-One sentence: *"GridSense shows Rwandans exactly where their electricity money goes, warns them before the bill jumps a tier, and lets landlords bill tenants fairly and get paid on time."*
+*"GridSense shows Rwandans exactly where their electricity money goes, warns them before the bill jumps a tier, and lets landlords bill tenants fairly and get paid on time."*
 
 Who I am as a company: *a Rwanda-built, Kigali-first energy-tech product that makes power consumption transparent, fair, and affordable.*
 
@@ -135,42 +135,6 @@ Tooling: live web research, a build pipeline (Vite), automated tests (Vitest/Pla
 
 ---
 
-## 10. How I present it (12–15 min) — the winning arc
-1. **Hook (feel the pain):** "Rwandans just got a tiered power bill — and no way to see it coming." Show the falling-balance problem.
-2. **The insight:** half of homes can't pay for savings; the money is with tier-crossers, landlords, SMEs. (Shows rigor.)
-3. **Live demo (centerpiece):** open the site → set up a home → Live Now tier-cliff alert → switch to **Kinyarwanda** → then the **Landlord workspace**: add a tenant, show the **exact amount due**, generate the **invoice**, hit **Send (WhatsApp)**, add **reminders to calendar**. Say out loud: *"sensor data is simulated and labelled; the tariff math is real and sourced."*
-4. **It's real & feasible:** architecture (CT→ESP32→cloud→app, same JSON contract), sourced BOM, **under-12-month payback**, unit-tested tariff.
-5. **Business:** tiers + pricing + device add-on; the funding ladder (Hanga).
-6. **Trust:** VAT-exempt exact math, Law 058/2021, behind-the-meter.
-7. **Close:** impact (fairer bills, less waste, energy literacy) + the ask (validation, a pilot, Hanga). *"GridSense AI — see your power, spend less."*
-
----
-
-## 10b. Verifiable, tamper-proof reports (my differentiator — added 2026-07-03)
-*One line I say:* **"Every GridSense monthly report is fingerprinted and anchored on a public blockchain — so a tenant, a landlord, or an auditor can prove it was never altered, without having to trust me."**
-
-- **The problem it kills:** landlord–tenant billing disputes come down to *"can I trust this bill?"* A signed PDF from my own server isn't enough — I hold the key and could re-sign an edited version. So I anchor each report's **SHA-256 fingerprint + its IPFS address (CID)** on a **public blockchain (Base Sepolia testnet today)**. Anyone can later **re-hash the report and compare** — match = untouched, mismatch = tampered.
-- **What's on-chain:** only the **hash + CID + {month, an opaque home reference, timestamp}**. **No name, no address, no kWh, no RWF, nothing personal** — because a blockchain record is permanent and **Law 058/2021** gives a right to erasure. The report file itself lives on **IPFS, encrypted**, and can be deleted; the on-chain fingerprint stays a meaningless 32 bytes.
-- **Invisible to the user:** **no wallet, no seed phrase, no crypto.** GridSense anchors on the user's behalf (gasless) and they just see **"Verified on-chain ✓"** and a **Verify** button.
-- **Why I'm NOT breaking the new crypto law (Law N° 023/2026):** that law licenses *virtual-asset businesses* — issuing, exchanging, custodying, or transferring crypto assets. **I do none of that.** I issue **no token, no coin, no payment, no franc-pegged asset**; I only write a fingerprint for integrity. That's **distributed-ledger notarization, not a crypto business** — so it needs no CMA licence. *(My reading of the law for the capstone; I'd get a Rwandan lawyer to confirm before commercial launch.)*
-- **The honest limit (I say it before they ask):** this proves a report **wasn't changed after I issued it** — it does **not** prove the sensor reading or the bill was *correct*. Integrity, not accuracy. Over-claiming would be dishonest and a panel would catch it.
-- **Cost:** **$0** at capstone scale (free testnet + free IPFS tier); a fraction of a cent per report on a real L2 in production. Big trust story, near-zero cost.
-- *Full reasoning + threat model: `02-strategy/verifiable-reports.md`; research + sources: `01-research/blockchain-research.md`; working proof-of-concept: `07-blockchain/`.*
-
----
-
-## 11. The hard questions & my answers (rehearse cold)
-- **"Who actually pays?"** → Tier-crossers, landlords, SMEs; mass-market is a later impact tier. Economics shown.
-- **"Sense/Emporia exist."** → None localized: no RWF tiers, no Kinyarwanda, not Rwanda-priced/serviced, no landlord billing. That's my moat.
-- **"Is the AI real?"** → Tariff-aware analytics + rules + forecasting now; ML/anomaly next; NILM later. I never claim what I haven't built.
-- **"Did you build hardware?"** → It's proven off-the-shelf (ESP32+SCT-013); the real ingestion contract + live app prove it; pilot installs it.
-- **"Are your numbers real?"** → Live Kigali prices + verified RURA tiers; the engine is unit-tested; electricity is VAT-exempt so the bill is exact.
-- **"Privacy / will it touch the meter?"** → Law 058/2021 by design; behind-the-meter, non-invasive; never touches the utility meter.
-- **"How do you make money?"** → Landlord/enterprise subscriptions + device add-on; individuals free for adoption.
-- **"Isn't the blockchain part just hype?"** → No — it does one thing a database can't: let *anyone* verify a report *forever* without trusting me. I killed every crypto-for-its-own-sake option (no token, no user wallets, no data on-chain). If verifiability weren't needed I'd ship a signed PDF; billing disputes and auditable grant data make it needed.
-- **"Are you doing crypto without a licence?"** → Law 023/2026 licenses issuing/exchanging/custodying/transferring virtual assets. I do none — I anchor a hash for integrity. It's notarization, not a virtual-asset business. (Lawyer to confirm pre-commercial.)
-
----
 
 ## 12. Roadmap (honest, staged)
 - **Phase 1 (now):** whole-home CT + ESP32 + plugs; tariff-aware app; landlord billing; demo live.
@@ -179,5 +143,5 @@ Tooling: live web research, a build pipeline (Vite), automated tests (Vitest/Pla
 
 ---
 
-## 13. My one-paragraph "how I did this" (for any conversation)
+## 13. My one-paragraph "how I did this" 
 *"I started from a real, dated change in Rwanda — the new tiered electricity tariff — and verified every number against REG and RURA. I realized most homes can't justify a savings device, so I aimed GridSense at the people who feel the cost: tier-crossing homes, landlords, and businesses. I built a working web platform in React that calculates the exact bill from the real tariff (it's unit-tested), personalizes to each home, and gives landlords per-tenant invoices, reminders, and reports. The hardware is a simple, proven ESP32 + clamp sensor, and my demo speaks the same data format so real devices plug straight in. It's deployed, bilingual, privacy-by-design under Law 058/2021, and priced to pay for itself in under a year. I didn't fake anything — where something needs a payment processor or a server, I built it integration-ready and said so."*
