@@ -1,13 +1,12 @@
 # The Channel — Integrating Verifiable Reports into the LIVE App
 
-> Date: 2026-07-03 · Session: Claude Code (integration build)
-> Input: `07-blockchain/CLAUDE-CODE-PROMPT.md` · PoC: `07-blockchain/` (14/14 contract tests, real local e2e)
+PoC: `07-blockchain/` (14/14 contract tests, real local e2e)
 > This documents the four passes (brainstorm → stress-test → deep-dive → argue & defend)
 > for HOW the finished PoC gets wired into `05-build/dashboard` without breaking anything.
 
 ---
 
-## 0. Facts re-verified live before designing (Rule 1)
+## 0. Facts re-verified live before designing
 
 | Fact | How verified | Result |
 |---|---|---|
