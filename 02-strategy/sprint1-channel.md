@@ -1,8 +1,5 @@
 # 02 — The Channel: Sprint 1 (Sourcing, Funding, Regulation, Build)
 
-> Rule 2 record. Date: 2026-06-22. The reasoning behind Sprint-1 decisions, saved so it's permanent and defensible.
-> Facts cited here live in `01-research/research-findings.md`, `04-business/capex-opex.md`, `04-business/fundraising-plan.md`, `05-build/dashboard-build-plan.md`.
-
 ---
 
 ## 1. BOM pricing — Brainstorm → Stress-test → Deep-dive → Argue
