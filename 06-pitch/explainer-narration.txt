@@ -1,0 +1,30 @@
+GridSense AI — 90-second explainer · voiceover script
+(≈190 words, calm pace ≈ 1:25–1:30. Read in your own voice, or re-run TTS once audio credits are added.)
+Video file: 06-pitch/GridSense-AI-Explainer.mp4 (1280×720, ~89s, 12 scenes)
+
+----------------------------------------------------------------
+[0:00 · Logo]      This is GridSense AI — an energy-intelligence platform built for Rwanda. See your power, and spend less.
+
+[0:06 · Problem]   In October twenty twenty-five, Rwanda's electricity became steeply tiered: eighty-nine francs a unit, then three hundred and ten, then three hundred and sixty-nine. Cross a single threshold, and the next unit can cost three and a half times more.
+
+[0:15 · Blind spot] Yet power is prepaid — you just watch a balance fall, with no idea what's draining it.
+
+[0:22 · Insight]   So we don't target everyone. We focus where the cost really bites: tier-crossing homes, landlords, and small businesses.
+
+[0:30 · Solution]  A low-cost clamp sensor and a small controller stream your usage to an app that knows the real tariff.
+
+[0:38 · Live Now]  You see your cost as it happens — and a tier-cliff alert before you ever overpay.
+
+[0:45 · Save]      It pinpoints exactly what's costing you, with honest, money-saving advice.
+
+[0:52 · Landlords] For landlords it's transformative: add your tenants, see the exact amount each one owes, send the invoice, and schedule reminders — billing disputes, gone.
+
+[1:01 · The math]  And the numbers are real: unit-tested, VAT-exempt, and it pays for itself in under a year.
+
+[1:09 · Trust]     Bilingual, private by design, and it never touches the utility meter.
+
+[1:16 · Platform]  Homes use it free; landlords and enterprises subscribe — with an optional connected device for live data.
+
+[1:23 · Close]     GridSense AI — see your power, spend less.   ·   gridsense-ai-zeta.vercel.app
+----------------------------------------------------------------
+Tip: record on your phone (calm pace, smile while reading), or use any TTS (ElevenLabs/Resend-style) — then it can be muxed onto the video.
