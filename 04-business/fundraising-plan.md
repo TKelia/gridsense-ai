@@ -1,7 +1,7 @@
 # 04 — Fundraising Plan (Zero-Budget Start) — updated Sprint 1, 2026-06-22
 
-> Reality: ~0 RWF now. Goal: a realistic path for an ALU student to fund a first prototype/pilot — and, in parallel, win the capstone with **no** cash needed.
-> Rule 1: every amount/date below is sourced; anything not officially confirmed is tagged `⚠️ UNCONFIRMED`.
+> Reality: ~0 RWF now. Goal: a realistic path for an ALU student to fund a first prototype/pilot .
+> Rule 1: every amount below is sourced; anything not officially confirmed is tagged `⚠️ UNCONFIRMED`.
 
 ---
 
