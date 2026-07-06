@@ -1,10 +1,5 @@
 # 06 — GridSense AI · Capstone Defense Deck (Script + Speaker Notes)
 
-> The source-of-truth deck script for the ALU capstone defense. Tool-agnostic — build the visuals from this in Gamma / Canva / PowerPoint.
-> **Every number here is traced to a verified repo source.** Unverified items are flagged `⚠️` and handled honestly on the Risks slide.
-> Design rationale (the Channel) is logged in `02-strategy/` and `PROJECT-REPORT.md`. Structure pre-empts the attack list in `02-strategy §E`.
-> Target: ~16 slides (12–15 min) + Q&A defense appendix. Presenter: Tesi Songa Kelia, BSc Software Engineering, ALU Kigali.
-
 ---
 
 ## SLIDE 1 — Title
