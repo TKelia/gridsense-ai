@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": { "composite": false, "incremental": false, "noEmit": true },
+  "include": ["src/pages/Home.tsx","src/components/TopBar.tsx","src/components/Footer.tsx","src/screens/Login.tsx"]
+}

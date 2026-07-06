@@ -1,0 +1,9 @@
+# GridSense AI
+
+> AI-powered residential energy monitoring for Rwandan households. Tracks electricity use and live cost across Rwanda's tiered RURA tariff (89 / 310 / 369 RWF/kWh), warns before a household crosses into a more expensive tier, and gives personalized money-saving recommendations. Available in English and Kinyarwanda.
+
+GridSense AI is an African Leadership University (ALU, Kigali) capstone project. The Phase-1 demo uses a whole-home current-transformer (CT) sensor with an ESP32 over Wi-Fi, plus optional energy-metering smart plugs. In this demo the sensor data is simulated and clearly labelled; the tariff math and appliance load model are sourced and real.
+
+## Pages
+
+- [Dashboard](/): Live home energy demo — real-time power, month-to-date cost, tier-cliff alerts, monthly forecast, appliance breakdown, and savings advice (English & Kinyarwanda).
