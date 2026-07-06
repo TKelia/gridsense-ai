@@ -1,9 +1,6 @@
 # GridSense AI —
 
-**An AI-powered home electricity monitor for Rwanda.** GridSense shows a household how much
-electricity each appliance uses, tracks the live cost across Rwanda's real RURA tariff
-(89 / 310 / 369 RWF/kWh), warns before the bill jumps a tier, gives personalized savings
-tips, and produces a **monthly report whose integrity is verifiable on a public blockchain**.
+GridSense AI is our software engineering capstone project exploring how affordable technology can help households in Rwanda better understand and reduce their electricity consumption. The current prototype combines appliance-level monitoring, AI-generated energy recommendations, tariff-aware cost estimation, and blockchain-backed report verification. Rather than building a commercial product, this project focuses on demonstrating that these components can work together in a practical solution.
 
 - **Live app:** https://gridsense-ai-zeta.vercel.app
 - **Operator:** Tesi Songa Kelia — BSc Software Engineering, African Leadership University, Kigali
