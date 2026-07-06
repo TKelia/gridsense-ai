@@ -1,11 +1,6 @@
 # Blockchain Research — Verifiable Monthly Reports
 
-> Phase A of the verifiable-reports mission. Every fact below is either **verified live**
-> (dated, with a source link) or explicitly tagged `⚠️ UNVERIFIED`. Per RULE 1, a labelled
-> gap beats a confident guess. Research date: **2026-07-03**.
-> Scope: anchor a monthly report's **SHA-256 fingerprint + IPFS CID** on a free public
-> testnet so anyone can later prove the report was never altered. No token, no payment,
-> no personal data on-chain.
+This research was carried out to determine whether blockchain could be used in a simple and practical way within GridSense AI. Instead of building a cryptocurrency-based solution, our goal was to verify the integrity of monthly electricity reports by storing a cryptographic fingerprint on a public blockchain. This document summarizes the technologies we evaluated and explains why the final implementation was selected.
 
 ---
 
