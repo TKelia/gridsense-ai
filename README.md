@@ -1,6 +1,6 @@
 # GridSense AI
 
-GridSense AI is our software engineering capstone project exploring how affordable technology can help households in Rwanda better understand and reduce their electricity consumption. The current prototype combines appliance-level monitoring, AI-generated energy recommendations, tariff-aware cost estimation, and blockchain-backed report verification. Rather than building a commercial product, this project focuses on demonstrating that these components can work together in a practical solution.
+GridSense AI is my capstone project exploring how affordable technology can help households in Rwanda better understand and reduce their electricity consumption. The current prototype combines appliance-level monitoring, AI-generated energy recommendations, tariff-aware cost estimation, and blockchain-backed report verification. Rather than building a commercial product, this project focuses on demonstrating that these components can work together in a practical solution.
 
 - **Live app:** https://gridsense-ai-zeta.vercel.app
 - **Operator:** Tesi Songa Kelia — BSc Software Engineering, African Leadership University, Kigali
@@ -78,15 +78,7 @@ and performance on different hardware/software. Headlines:
 - **Smart contract: 14/14 tests pass**; a real local anchor→verify round-trip verifies 6/6 checks incl. tamper detection.
 - **Production build green** and deployed; verified live via browser (screens render, 0 console errors).
 
-## 6. 5-minute demo video — script/shot list (core functionality)
-> Record the **live app**; keep sign-in to ~10 seconds. Focus on consumption + verify.
-1. **0:00–0:30 — Problem.** One line: "Rwandan homes pay a tiered tariff but only see a falling prepaid balance — no idea which appliance drains it." Show the Home page headline.
-2. **0:30–2:00 — Appliance consumption (core).** Open **Try the live demo → Live Now**: live kW, month-to-date RWF, the **tier-cliff alert**, the tier gauge. Switch to **Appliances**: walk through per-appliance kWh/RWF/% (fridge = always-on driver, water heater = big lever).
-3. **2:00–3:00 — This Month + Save.** Show the forecast crossing the 50 kWh tier line; open **Save** and read two recommendations (cliff-crossing + biggest load) with the honest estimated ranges.
-4. **3:00–3:30 — Kinyarwanda.** Toggle EN → RW to show localization.
-5. **3:30–4:45 — Blockchain verify.** Open a monthly report, point out the **"Verified on-chain ✓"** badge, open **/verify**, click **Verify now** (PASS), then **Tamper demo** (FAIL). Say the honest line: "this proves the report wasn't changed after issuance — not that the reading was correct." Show the BaseScan link.
-6. **4:45–5:00 — Close.** "Built local, on the real RURA tariff, privacy-by-design under Law 058/2021. GridSense AI — see your power, spend less."
 
-## 7. Scope notes
+## 6. Scope notes
 - Sensor data in the hosted demo is simulated + labelled; the ingestion contract matches a real ESP32 + CT clamp so live devices plug in unchanged.
 - Blockchain = **testnet, integrity only** (no token/payment/personal data). Full reasoning: `02-strategy/verifiable-reports.md`; contract + proof: `07-blockchain/`.
