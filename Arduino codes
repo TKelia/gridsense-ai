@@ -1,0 +1,398 @@
+#include <PZEM004Tv30.h>
+#include <Wire.h>
+#include <LiquidCrystal_PCF8574.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <WiFiClientSecure.h>
+#include <WiFiManager.h>
+
+// =====================================================
+// PZEM UART PINS
+// =====================================================
+#define RXD2 16
+#define TXD2 17
+
+// =====================================================
+// GRID SENSE API
+// =====================================================
+const char* apiHost =
+  "https://gridsense-ai-zeta.vercel.app/api/ingest";
+
+const char* deviceId = "gridsense-main";
+
+// =====================================================
+// PZEM UART
+// =====================================================
+HardwareSerial PZEMSerial(2);
+
+PZEM004Tv30 pzem(
+  PZEMSerial,
+  RXD2,
+  TXD2
+);
+
+// =====================================================
+// LCD PCF8574
+// =====================================================
+LiquidCrystal_PCF8574 lcd(0x27);
+
+// =====================================================
+// API SEND INTERVAL
+// =====================================================
+unsigned long lastSend = 0;
+
+const unsigned long sendInterval = 5000;
+
+
+// =====================================================
+// SEND DATA TO GRID SENSE API
+// =====================================================
+void sendToAPI(
+  float voltage,
+  float current,
+  float power,
+  float energy
+) {
+
+  // Check WiFi
+  if (WiFi.status() != WL_CONNECTED) {
+
+    Serial.println("WiFi disconnected.");
+
+    return;
+  }
+
+
+  // HTTPS client
+  WiFiClientSecure client;
+
+  // For testing
+  // Skips SSL certificate verification
+  client.setInsecure();
+
+
+  HTTPClient http;
+
+
+  // ===================================================
+  // BUILD API URL
+  // ===================================================
+
+  String url = String(apiHost) +
+               "?device=" + String(deviceId) +
+               "&power=" + String(power, 2) +
+               "&energy=" + String(energy, 3) +
+               "&voltage=" + String(voltage, 2) +
+               "&amp=" + String(current, 2);
+
+
+  Serial.println();
+  Serial.println("====================================");
+  Serial.println("Sending data to GridSense");
+  Serial.println("====================================");
+
+  Serial.println("URL:");
+  Serial.println(url);
+
+
+  // ===================================================
+  // SEND HTTP GET REQUEST
+  // ===================================================
+
+  http.begin(client, url);
+
+  int httpCode = http.GET();
+
+
+  // ===================================================
+  // API RESPONSE
+  // ===================================================
+
+  if (httpCode > 0) {
+
+    Serial.print("HTTP Response Code: ");
+    Serial.println(httpCode);
+
+    String response = http.getString();
+
+    Serial.println("Server Response:");
+    Serial.println(response);
+
+  } else {
+
+    Serial.print("HTTP GET failed: ");
+
+    Serial.println(
+      http.errorToString(httpCode)
+    );
+  }
+
+
+  http.end();
+
+  Serial.println("====================================");
+}
+
+
+// =====================================================
+// SETUP
+// =====================================================
+void setup() {
+
+  // ===================================================
+  // SERIAL
+  // ===================================================
+
+  Serial.begin(115200);
+
+  delay(500);
+
+
+  // ===================================================
+  // I2C
+  // ESP32 SDA = GPIO 21
+  // ESP32 SCL = GPIO 22
+  // ===================================================
+
+  Wire.begin(21, 22);
+
+
+  // ===================================================
+  // LCD INITIALIZATION
+  // ===================================================
+
+  lcd.begin(16, 2);
+
+  lcd.setBacklight(255);
+
+  lcd.clear();
+
+  lcd.setCursor(0, 0);
+  lcd.print("GridSense");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Starting...");
+
+  delay(2000);
+
+
+  // ===================================================
+  // WIFI MANAGER
+  // ===================================================
+
+  WiFiManager wm;
+
+
+  lcd.clear();
+
+  lcd.setCursor(0, 0);
+  lcd.print("WiFi Setup");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Connecting...");
+
+
+  Serial.println();
+  Serial.println("====================================");
+  Serial.println("GridSense WiFi Manager");
+  Serial.println("====================================");
+
+
+  // ===================================================
+  // AUTO CONNECT
+  // ===================================================
+  //
+  // First boot:
+  // ESP32 creates "GridSense-Setup"
+  //
+  // Connect to it with your phone.
+  // Enter your WiFi credentials.
+  //
+  // ===================================================
+
+  bool connected = wm.autoConnect("GridSense-Setup");
+
+
+  // ===================================================
+  // CHECK WIFI CONNECTION
+  // ===================================================
+
+  if (!connected) {
+
+    Serial.println("WiFi connection failed.");
+
+    lcd.clear();
+
+    lcd.setCursor(0, 0);
+    lcd.print("WiFi Failed");
+
+    lcd.setCursor(0, 1);
+    lcd.print("Restarting...");
+
+    delay(3000);
+
+    ESP.restart();
+
+  } else {
+
+    Serial.println();
+    Serial.println("WiFi connected!");
+
+    Serial.print("SSID: ");
+    Serial.println(WiFi.SSID());
+
+    Serial.print("ESP32 IP: ");
+    Serial.println(WiFi.localIP());
+
+
+    lcd.clear();
+
+    lcd.setCursor(0, 0);
+    lcd.print("WiFi Connected");
+
+    lcd.setCursor(0, 1);
+    lcd.print("GridSense Ready");
+
+    delay(2000);
+  }
+}
+
+
+// =====================================================
+// MAIN LOOP
+// =====================================================
+void loop() {
+
+  // ===================================================
+  // READ PZEM DATA
+  // ===================================================
+
+  float voltage = pzem.voltage();
+
+  float current = pzem.current();
+
+  float power = pzem.power();
+
+  float energy = pzem.energy();
+
+  float frequency = pzem.frequency();
+
+  float pf = pzem.pf();
+
+
+  // ===================================================
+  // CHECK PZEM READING
+  // ===================================================
+
+  if (!isnan(voltage)) {
+
+
+    // =================================================
+    // SERIAL MONITOR
+    // =================================================
+
+    Serial.println();
+    Serial.println("========== PZEM READINGS ==========");
+
+    Serial.print("Voltage: ");
+    Serial.print(voltage, 2);
+    Serial.println(" V");
+
+    Serial.print("Current: ");
+    Serial.print(current, 2);
+    Serial.println(" A");
+
+    Serial.print("Power: ");
+    Serial.print(power, 2);
+    Serial.println(" W");
+
+    Serial.print("Energy: ");
+    Serial.print(energy, 3);
+    Serial.println(" kWh");
+
+    Serial.print("Frequency: ");
+    Serial.print(frequency, 2);
+    Serial.println(" Hz");
+
+    Serial.print("Power Factor: ");
+    Serial.println(pf, 2);
+
+    Serial.println("===================================");
+
+
+    // =================================================
+    // LCD DISPLAY
+    // =================================================
+
+    lcd.clear();
+
+
+    // -------------------------------------------------
+    // LINE 1
+    // -------------------------------------------------
+
+    lcd.setCursor(0, 0);
+
+    lcd.print("V:");
+    lcd.print(voltage, 1);
+    lcd.print("V ");
+
+    lcd.print("I:");
+    lcd.print(current, 1);
+    lcd.print("A");
+
+
+    // -------------------------------------------------
+    // LINE 2
+    // -------------------------------------------------
+
+    lcd.setCursor(0, 1);
+
+    lcd.print("P:");
+    lcd.print(power, 0);
+    lcd.print("W ");
+
+    lcd.print("E:");
+    lcd.print(energy, 2);
+    lcd.print("k");
+
+
+    // =================================================
+    // SEND TO API EVERY 5 SECONDS
+    // =================================================
+
+    if (millis() - lastSend >= sendInterval) {
+
+      sendToAPI(
+        voltage,
+        current,
+        power,
+        energy
+      );
+
+      lastSend = millis();
+    }
+
+
+  } else {
+
+    // =================================================
+    // PZEM ERROR
+    // =================================================
+
+    Serial.println("Failed to read from PZEM.");
+
+
+    lcd.clear();
+
+    lcd.setCursor(0, 0);
+    lcd.print("PZEM Error");
+
+    lcd.setCursor(0, 1);
+    lcd.print("Check Wiring");
+  }
+
+
+  // Wait before next reading
+  delay(2000);
+}
