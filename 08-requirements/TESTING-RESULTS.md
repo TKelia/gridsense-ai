@@ -102,9 +102,9 @@ The key milestones — a verified tariff engine, four working consumption screen
 ---
 
 ## 8. Deployment plan (documented & verified)
-1. **Build:** `cd 05-build/dashboard && npm install && npm run build` (type-check + bundle).
+1. **Build:** `cd dashboard && npm install && npm run build` (type-check + bundle).
 2. **Deploy:** `vercel --prod` (project linked as `gridsense-ai`) → production URL.
 3. **Verify in target environment:** open the live URL; confirm the four consumption screens, the tier-cliff alert, EN/RW, and the `/verify` page render with live data and **0 console errors** (done — see §2.5).
 4. **Optional on-chain:** set `RELAYER_PRIVATE_KEY`, `REPORT_REGISTRY_ADDRESS`, `REPORT_ENC_KEY`, `BASE_SEPOLIA_RPC_URL` in Vercel env to enable real anchoring (`07-blockchain/README.md`).
 
-*Evidence artifacts: `08-submission/GridSense-Demo.mp4` (5-min demo), `08-submission/screenshots/`, `07-blockchain/integration-screenshots/`, and the test suites under `05-build/dashboard` and `07-blockchain`.*
+*Evidence artifacts: `08-requirements/GridSense-Demo.mp4` (5-min demo), `08-requirements/screenshots/`, `07-blockchain/integration-screenshots/`, and the test suites under `dashboard` and `07-blockchain`.*
