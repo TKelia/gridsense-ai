@@ -53,7 +53,7 @@ npm i -g vercel
 vercel login          # opens browser / emails a code
 vercel --prod         # from this dashboard/ folder; accept the Vite defaults
 ```
-Or, easier: push the repo to GitHub and **import it on vercel.com** → set the **Root Directory** to `05-build/dashboard` → it auto-detects Vite and deploys on every push. Build command `npm run build`, output `dist`.
+Or, easier: push the repo to GitHub and **import it on vercel.com** → set the **Root Directory** to `dashboard` → it auto-detects Vite and deploys on every push. Build command `npm run build`, output `dist`.
 
 ## Next build steps (per ../dashboard-build-plan.md)
 This-Month + Appliances + Save screens · EN/RW i18n + honesty toggle · Playwright journeys · Lighthouse pass · ground appliance ownership % from the Columbia QSEL studies to weight scenarios.
